@@ -6,6 +6,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^2.0.0",
+    "react-sound": "^0.6.1",
     "socket.io": "^2.0.1"
   },
   "devDependencies": {
