@@ -40,8 +40,8 @@ class App extends Component {
 
   connectUser(playerName) {
     this.socket = io('http://localhost:8081');
-    console.log(this.socket);
-    this.socket.emit('join', playerName);
+    this.socket.emit('join', 'player', {name: playerName});
+    this.socket.emit('join', 'scoreboard');
   }
 }
 
