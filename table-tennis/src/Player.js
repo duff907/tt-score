@@ -31,7 +31,7 @@ class Player extends Component {
           <a href="#" className="button play-button" onClick={this.handleNameSubmit}>Play</a>
         </div> : null}
 
-        {this.state.playing ? <div>
+        {this.state.playing ? <div className="container">
           <a href="#" className="button" onClick={this.handleAddPoint}>Add point</a>
         </div> : null}
 

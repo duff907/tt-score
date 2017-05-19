@@ -31,8 +31,8 @@ body {
 }
 
 .buttons {
-  position: fixed;
-  margin-top: 200px;
+  margin: 11rem auto;
+  text-align: center;
 }
 
 .button {
@@ -40,6 +40,12 @@ body {
   margin: 5px;
   color: white;
   background: #ff208f;
+  display: block;
+  margin: 0 0 1rem;
+}
+
+a, button {
+  text-align: center;
 }
 
 a.button {
