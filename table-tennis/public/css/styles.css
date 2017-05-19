@@ -16,7 +16,7 @@ html {
 
 body {
   min-height: 100%;
-  color: white;
+  color: #ff208f;
   font-family: "SEGA";
   background: url("../grid.jpg") no-repeat;
   background-size: cover;
@@ -26,7 +26,8 @@ body {
 .title {
   font-size: 30px;
   text-align: center;
-
+  font-size: 2.5rem;
+  line-height: 3rem;
 }
 
 .buttons {
@@ -57,8 +58,6 @@ a.button {
 }
 
 .container p {
-  font-family: 'SEGA';
-  color: #ff208f;
   font-size: 2.5rem;
   line-height: 3rem;
 }
