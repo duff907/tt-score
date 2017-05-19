@@ -10,7 +10,11 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <p>Dashboard</p>
+        <p className="title">ZUTO</p>
+        <div className="buttons">
+          <a href="/player" className="button">Join Game</a>
+          <a href="/scoreboard" className="button">Live Score</a>
+        </div>
       </div>
     );
   }

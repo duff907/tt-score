@@ -1,0 +1,40 @@
+@font-face {
+   font-family: "SEGA";
+   src: url("fonts/SEGA.ttf") format("truetype");
+}
+
+
+html {
+  height: 100%;
+}
+
+
+body {
+  height: 100%;
+  color: white;
+  font-family: "SEGA";
+  background: url("../grid.jpg") no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+
+}
+
+.buttons {
+  position: fixed;
+  margin-top: 200px;
+}
+
+.button {
+  padding: 20px;
+  margin: 5px;
+  color: white;
+  background: #ff208f;
+}
+
+a.button {
+  text-decoration: none;
+}
