@@ -3,6 +3,11 @@
    src: url("fonts/SEGA.ttf") format("truetype");
 }
 
+@font-face {
+   font-family: "cind";
+   src: url("fonts/CIND.otf") format("opentype");
+}
+
 
 html {
   height: 100%;
@@ -10,11 +15,12 @@ html {
 
 
 body {
-  height: 100%;
+  min-height: 100%;
   color: white;
   font-family: "SEGA";
   background: url("../grid.jpg") no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .title {
@@ -68,4 +74,32 @@ a.button {
   width: 7rem;
   text-align: center;
   margin: 1rem auto 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 80px;
+}
+
+.score {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.score span {
+  display: block;
+}
+
+.score span:first-child {
+  font-size: 5em;
+  margin-bottom: 0.5em;
+  color: #ff208f;
+}
+
+.score span:last-child {
+  display: block;
+  font-size: 25em;
+  font-family: "cind";
 }

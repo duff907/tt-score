@@ -18,7 +18,7 @@ class Scoreboard extends Component {
     if (this.state.scores) {
       var scoreKeys = Object.keys(this.state.scores);
       var playerScores = scoreKeys.map((field, index) => {
-        return <div className="scores"><span>{field}</span><span>{this.state.scores[field]}</span></div>;
+        return <div className="score"><span>{field}</span><span>{this.state.scores[field]}</span></div>;
       });
     }
 
@@ -40,7 +40,6 @@ class Scoreboard extends Component {
     this.socket.on('score:update', function(scores){
       self.setState({scores: scores});
     });
-    self.setState({scores: {tom: 5, calum: 4}});
   }
 }
 
