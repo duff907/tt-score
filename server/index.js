@@ -14,13 +14,13 @@ var people = {};
 
 io.on('connection', function(socket){
 
-  socket.on("join", function(name){
-      if(!people[name] && Object.keys(people)) {
+  socket.on("join", function(type, options){
+      if(people[options.name] && Object.keys(people)) {
         socket.to(socket.id).emit('user cannot be added');
         return;
       }
-      people[name] = {'socket': socket.id, score: 0};
-      console.log(`${name} joined the game`);
+      people[options.name] = {'socket': socket.id, score: 0};
+      console.log(`${options.name} joined the game`);
   });
 
   socket.on("point:add", function(name){

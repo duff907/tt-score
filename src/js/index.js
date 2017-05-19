@@ -19,7 +19,7 @@ $(function () {
   function connectUser(username) {
     socket = io();
 
-    socket.emit('join', username);
+    socket.emit('join', 'player', {name: username});
   }
 
 });
