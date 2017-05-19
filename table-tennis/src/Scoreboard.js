@@ -17,17 +17,17 @@ class Scoreboard extends Component {
     var playerScores = [];
     if (this.state.scores) {
       var scoreKeys = Object.keys(this.state.scores);
-      for (var i=0; i < scoreKeys.length; i++) {
-        console.log(scoreKeys[i]);
-        var playerScore = <p>{scoreKeys[i]} - {this.state.scores[scoreKeys[i]]}</p>
-        playerScores.push(playerScore)
-      }
+      var playerScores = scoreKeys.map((field, index) => {
+        return <div className="scores"><span>{field}</span><span>{this.state.scores[field]}</span></div>;
+      });
     }
 
     return (
       <div>
-        <p>Scoreboard</p>
-        {playerScores}
+        <h1>Scoreboard</h1>
+        <div className="scores">
+          {playerScores}
+        </div>
       </div>
     );
   }
@@ -40,6 +40,7 @@ class Scoreboard extends Component {
     this.socket.on('score:update', function(scores){
       self.setState({scores: scores});
     });
+    self.setState({scores: {tom: 5, calum: 4}});
   }
 }
 
