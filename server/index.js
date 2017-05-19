@@ -11,22 +11,40 @@ app.get('/', function(req, res){
 app.use(express.static(path.resolve(__dirname + '/../web/')));
 
 var people = {};
+var scoreboards = {};
 
 io.on('connection', function(socket){
 
   socket.on("join", function(type, options){
-      if(people[options.name] && Object.keys(people)) {
-        socket.to(socket.id).emit('user cannot be added');
-        return;
+      if (type == 'player') {
+        if(people[options.name] && Object.keys(people)) {
+          socket.to(socket.id).emit('user cannot be added');
+          return;
+        }
+        people[options.name] = {'socket': socket.id, score: 0};
+        console.log(`${options.name} joined the game`);
       }
-      people[options.name] = {'socket': socket.id, score: 0};
-      console.log(`${options.name} joined the game`);
+      else if (type == 'scoreboard') {
+        scoreboards = [socket.id];
+      }
   });
 
   socket.on("point:add", function(name){
       people[name].score = people[name].score + 1 ;
       console.log(`${name}'s new score is ${people[name].score}`);
+
+      socket.broadcast.emit('score:update', createScoreObj(people));
   });
+
+  function createScoreObj(people) {
+    var scores = {};
+    for (var player in people) {
+      if (people.hasOwnProperty(player)) {
+        scores[player] = people[player].score;
+      }
+    }
+    return scores;
+  }
 
 });
 
