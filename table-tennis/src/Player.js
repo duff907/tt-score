@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 let io = require('socket.io-client');
 
-class App extends Component {
+class Player extends Component {
 
   constructor() {
     super();
@@ -45,4 +43,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Player;
