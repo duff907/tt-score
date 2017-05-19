@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Sound from 'react-sound';
 let io = require('socket.io-client');
 
 class Scoreboard extends Component {
@@ -6,7 +7,9 @@ class Scoreboard extends Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      playSound: false
+    };
   }
 
   componentDidMount() {
@@ -28,6 +31,16 @@ class Scoreboard extends Component {
         <div className="scores">
           {playerScores}
         </div>
+        {this.state.playSound ? <div>
+          <Sound
+            url="./assets/player2.wav"
+            playStatus={Sound.status.PLAYING}
+            playFromPosition={300 /* in milliseconds */}
+            onLoading={this.handleSongLoading}
+            onPlaying={this.handleSongPlaying}
+            onFinishedPlaying={this.handleSongFinishedPlaying}
+          />
+        </div> : null}
       </div>
     );
   }
@@ -38,7 +51,7 @@ class Scoreboard extends Component {
     this.socket.emit('join', 'scoreboard');
 
     this.socket.on('score:update', function(scores){
-      self.setState({scores: scores});
+      self.setState({scores: scores, playSound: true});
     });
   }
 }
