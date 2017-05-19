@@ -34,7 +34,7 @@ class Scoreboard extends Component {
 
   registerScoreboard() {
     var self = this;
-    this.socket = io('http://localhost:8081');
+    this.socket = io('http://192.168.171.36:8081');
     this.socket.emit('join', 'scoreboard');
 
     this.socket.on('score:update', function(scores){

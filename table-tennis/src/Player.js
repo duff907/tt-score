@@ -26,7 +26,7 @@ class Player extends Component {
       <div className="app">
 
         {!this.state.playing ? <div className="container">
-          <p className="title">Enter your name</p>
+          <p className="title name">Enter your name</p>
           <input onChange={this.updatePlayerName} type="text" id="n" className="playerName" />
           <a href="#" className="button play-button" onClick={this.handleNameSubmit}>Play</a>
         </div> : null}
@@ -61,7 +61,7 @@ class Player extends Component {
   }
 
   connectUser(playerName) {
-    this.socket = io('http://localhost:8081');
+    this.socket = io('http://192.168.171.36:8081');
     this.socket.emit('join', 'player', {name: playerName});
     this.socket.emit('join', 'scoreboard');
   }

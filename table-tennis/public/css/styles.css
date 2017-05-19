@@ -30,6 +30,10 @@ body {
   line-height: 3rem;
 }
 
+.title.name {
+  text-align: left;
+}
+
 .buttons {
   margin: 11rem auto;
   text-align: center;
