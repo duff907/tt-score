@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <style>
+    #add-point {
+      display: none;
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <div id="score">
+
+    </div>
+    <form action="" id="name-form">
+      <input type="text" id="n">
+      <button type="submit">submit</button>
+    </form>
+    <button id="add-point">add point</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
