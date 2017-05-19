@@ -25,7 +25,7 @@ class Player extends Component {
     return (
       <div className="app">
 
-        {!this.state.playing ? <div className="">
+        {!this.state.playing ? <div className="container">
           <input onChange={this.updatePlayerName} type="text" id="n" />
           <a href="#" onClick={this.handleNameSubmit}>Play</a>
         </div> : null}
