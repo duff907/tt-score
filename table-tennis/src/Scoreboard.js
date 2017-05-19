@@ -39,7 +39,6 @@ class Scoreboard extends Component {
 
     this.socket.on('score:update', function(scores){
       self.setState({scores: scores});
-      this.setState({scores: {tom: 5, calum: 4}});
     });
   }
 }
