@@ -26,12 +26,13 @@ class Player extends Component {
       <div className="app">
 
         {!this.state.playing ? <div className="container">
-          <input onChange={this.updatePlayerName} type="text" id="n" />
-          <a href="#" onClick={this.handleNameSubmit}>Play</a>
+          <p>Enter your name</p>
+          <input onChange={this.updatePlayerName} type="text" id="n" className="playerName" />
+          <a href="#" className="button play-button" onClick={this.handleNameSubmit}>Play</a>
         </div> : null}
 
         {this.state.playing ? <div>
-          <a href="#" onClick={this.handleAddPoint}>Add point</a>
+          <a href="#" className="button" onClick={this.handleAddPoint}>Add point</a>
         </div> : null}
 
         {this.state.playSound ? <div>

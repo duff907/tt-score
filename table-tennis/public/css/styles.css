@@ -38,3 +38,34 @@ body {
 a.button {
   text-decoration: none;
 }
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 21rem;
+  padding: 0 2rem 0;
+}
+
+.container p {
+  font-family: 'SEGA';
+  color: #ff208f;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.playerName {
+  padding: 1rem 0.5rem;
+  display: block;
+  font-size: 20px;
+}
+
+.play-button {
+  display: block;
+  width: 7rem;
+  text-align: center;
+  margin: 1rem auto 0;
+}
