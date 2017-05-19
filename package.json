@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack && npm run scss",
+    "build:watch": "webpack -w & npm run watch:css",
     "start": "node server/index.js",
-    "build": "webpack"
+    "scss": "node-sass --output-style compressed -o web/ src/scss",
+    "watch:css": "npm run scss && onchange 'src/scss/*.scss' -- npm run scss"
   },
   "author": "",
   "license": "ISC",
