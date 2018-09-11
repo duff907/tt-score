@@ -41,6 +41,19 @@ class Scoreboard extends Component {
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
         </div> : null}
+        {this.state.playWinningSound ? <div>
+          <Sound
+            url="./assets/gameover.wav"
+            playStatus={Sound.status.PLAYING}
+            playFromPosition={300 /* in milliseconds */}
+            onLoading={this.handleSongLoading}
+            onPlaying={this.handleSongPlaying}
+            onFinishedPlaying={this.handleSongFinishedPlaying}
+          />
+        </div> : null}
+        {this.state.playWinningSound ? <div className="winner">
+          <p>Winner {this.state.winningPlayer}</p>
+        </div> : null}
       </div>
     );
   }
@@ -52,6 +65,15 @@ class Scoreboard extends Component {
 
     this.socket.on('score:update', function(scores){
       self.setState({scores: scores, playSound: true});
+
+      if (self.state.scores) {
+        var scoreKeys = Object.keys(self.state.scores);
+        var playerScores = scoreKeys.map((field, index) => {
+          if (self.state.scores[field] == 21) {
+            self.setState({winningPlayer: field, playWinningSound: true});
+          }
+        });
+      }
     });
   }
 }

@@ -112,3 +112,21 @@ h1 {
   font-size: 25em;
   font-family: "cind";
 }
+
+.winner {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ff208f;
+  color: #fff;
+  font-size: 10em;
+  text-align: center;
+  line-height: 100vh;
+}
+
+.winner p {
+  display: inline-block;
+  line-height: normal;
+}
